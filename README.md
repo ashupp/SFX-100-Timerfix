@@ -1,8 +1,16 @@
 # SFX-100-Timerfix
 Fixes Windows 10 high performance timer issues
 
-Please support this great project.  
-https://opensfx.com
+Many current Windows installations are suffering a slower high performance timer. This could be due to an energy-saving setting but currently there is many speculation and no one is really sure about why this is actually happening and how to solve it by configuration. 
+
+The slower timer can lead to different issues. 
+On SFX-100 system it can result in stuttering movements.
+Because the update rate of the Leonardo controller should be 100 times per second (10ms). Because of the issue the update rate is only 60-70 times per second (14-15ms).
+
+This is a fire-and-forget fix for SimFeedback to enforce best possible timer performance. 
+It automatically detects if a fix for the timer is needed and applies it at runtime.
+At start-up, a period of 50 timer events is examined. If the average of the results are higher than 12 milliseconds, the fix is applied.
+
 
 # Installation  
 Do not click on the green Download button on this page. This would download the sources only.  
@@ -43,3 +51,6 @@ https://github.com/ashupp/SFX-100-Timerfix/releases
 
 
 This fix is based on the research and proof of concept by SimFeedBack community member Dsl71, Saxxon and many others.
+
+**Please support this great project. **
+https://opensfx.com
