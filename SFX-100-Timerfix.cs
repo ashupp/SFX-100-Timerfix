@@ -46,6 +46,16 @@ namespace TimerFixExtension
                     Log(Name + ": slow timer detected - loading fix");
                     WinApi.TimeBeginPeriod(1);
                     Log(Name + ": fix loaded");
+
+                    if (TimerUpgradeNecessary())
+                    {
+                        Log(Name + ": timer still slow - fix could not lower timer interval");
+                    }
+                    else
+                    {
+                        Log(Name + ": fix is working - enjoy :) ");
+
+                    }
                 }
                 catch(Exception ex)
                 {
@@ -57,6 +67,7 @@ namespace TimerFixExtension
                 Log("SFX-100-Timerfix: not necessary");
             }
         }
+
 
         private bool TimerUpgradeNecessary()
         {
