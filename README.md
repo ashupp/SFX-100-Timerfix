@@ -25,14 +25,14 @@ https://github.com/ashupp/SFX-100-Timerfix/releases
 - Check SimFeedbackLog.log in /log subdirectory 
 - Look for entries containing "SFX-100-Timerfix"
 
-This is how it looks like when the extension detects that no timer fix is needed
+**This is how it looks like when the extension detects that no timer fix is needed**
 ```
 2021-04-21 14:32:24.4039 Info SFX-100 Timerfix: Extension loaded  
 2021-04-21 14:32:24.9294 Info SFX-100 Timerfix: Average timer value: 10,36  
 2021-04-21 14:32:27.0154 Info SFX-100-Timerfix: not necessary  
 ```
 
-And this is how it looks like when the extension detects the timer fix is needed
+**And this is how it looks like when the extension detects the timer fix is needed**
 ```
 2021-04-21 15:43:48.0924 Debug AutoStart Extension SFX-100 Timerfix 1.0.2.0
 2021-04-21 15:43:48.0934 Info SFX-100 Timerfix: Extension loaded
