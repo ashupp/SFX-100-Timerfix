@@ -6,8 +6,11 @@ https://opensfx.com
 
 # Installation  
 Do not click on the green Download button on this page. This would download the sources only.  
-Download the files from the releases page instead.    
+Download the files from the releases page instead or download latest version below. 
 https://github.com/ashupp/SFX-100-Timerfix/releases
+
+[Click here to download latest SFX-100-Timerfix installer](https://github.com/ashupp/SFX-100-Streamdeck/releases/latest/download/SFX-100-Timerfix-Setup.exe)
+
 
 - Launch the installer
 - Select SimFeedback base directory (not extension directory)
