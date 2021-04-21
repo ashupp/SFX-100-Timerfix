@@ -50,7 +50,7 @@ https://github.com/ashupp/SFX-100-Timerfix/releases
 2021-04-21 16:53:22.7474 Info SFX-100 Timerfix: slow timer detected - loading fix
 2021-04-21 16:53:22.7474 Info SFX-100 Timerfix: fix loaded
 2021-04-21 16:53:23.2769 Info SFX-100 Timerfix: Average timer value: 10,26
-2021-04-21 16:53:23.2769 Info SFX-100 Timerfix: fix is working - enjoy :slight_smile:
+2021-04-21 16:53:23.2769 Info SFX-100 Timerfix: fix is working - enjoy :)
 ```
 
 
