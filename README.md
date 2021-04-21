@@ -55,6 +55,7 @@ https://github.com/ashupp/SFX-100-Timerfix/releases
 
 
 This fix is based on the research and proof of concept by SimFeedBack community member Dsl71, Saxxon and many others.
+The issue in combination with SFX-100 was detected by Pimpi84 - thank you.
 
 **Please support this great project. **
 https://opensfx.com
