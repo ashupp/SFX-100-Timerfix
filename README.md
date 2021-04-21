@@ -17,10 +17,10 @@ https://github.com/ashupp/SFX-100-Timerfix/releases
 - Enable the plugin and enable autorun of the extension in SimFeedback
 - Restart SimFeedback
 
-![image](https://user-images.githubusercontent.com/1867828/115565503-b8eb2600-a2b9-11eb-9f8a-e4537f8519f9.png)
+![image](https://user-images.githubusercontent.com/1867828/115565650-d6b88b00-a2b9-11eb-9a04-24d6a345d4df.png)
 
 
-## How can i be sure this thing works?
+## How can i be sure and test if this fix works?
 - Launch Simfeedback with debug logging enabled (SimFeedbackStart.exe -d 2)
 - Check SimFeedbackLog.log in /log subdirectory 
 - Look for entries containing "SFX-100-Timerfix"
