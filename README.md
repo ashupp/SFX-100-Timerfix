@@ -17,6 +17,9 @@ https://github.com/ashupp/SFX-100-Timerfix/releases
 - Enable the plugin and enable autorun of the extension in SimFeedback
 - Restart SimFeedback
 
+![image](https://user-images.githubusercontent.com/1867828/115565503-b8eb2600-a2b9-11eb-9f8a-e4537f8519f9.png)
+
+
 ## How can i be sure this thing works?
 - Launch Simfeedback with debug logging enabled (SimFeedbackStart.exe -d 2)
 - Check SimFeedbackLog.log in /log subdirectory 
@@ -28,5 +31,15 @@ This is how it looks like when the extension detects that no timer fix is needed
 2021-04-21 14:32:24.9294 Info SFX-100 Timerfix: Average timer value: 10,36  
 2021-04-21 14:32:27.0154 Info SFX-100-Timerfix: not necessary  
 ```
+
+And this is how it looks like when the extension detects the timer fix is needed
+```
+2021-04-21 15:43:48.0924 Debug AutoStart Extension SFX-100 Timerfix 1.0.2.0
+2021-04-21 15:43:48.0934 Info SFX-100 Timerfix: Extension loaded
+2021-04-21 15:43:48.8653 Info SFX-100 Timerfix: Average timer value: 15
+2021-04-21 15:43:48.8653 Info SFX-100 Timerfix: slow timer detected - loading fix
+2021-04-21 15:43:48.8653 Info SFX-100 Timerfix: fix loaded
+```
+
 
 This fix is based on the research and proof of concept by SimFeedBack community member Dsl71, Saxxon and many others.
