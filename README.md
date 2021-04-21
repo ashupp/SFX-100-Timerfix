@@ -5,7 +5,8 @@ Many current Windows installations are suffering a slower high performance timer
 
 The slower timer can lead to different issues. 
 On SFX-100 system it can result in stuttering movements.
-Because the update rate of the Leonardo controller should be 100 times per second (10ms). Because of the issue the update rate is only 60-70 times per second (14-15ms).
+The update rate of the Leonardo controller should be 100 times per second (10ms). 
+Because of the issue the update rate is only 60-70 times per second (14-15ms) on affected systems.
 
 This is a fire-and-forget fix for SimFeedback to enforce best possible timer performance. 
 It automatically detects if a fix for the timer is needed and applies it at runtime.
