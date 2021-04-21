@@ -81,7 +81,6 @@ namespace TimerFixExtension
             var averageTimer = timeValues.Average();
             Log(Name + ": Average timer value: " + averageTimer.ToString());
 
-            MessageBox.Show(averageTimer.ToString(), "SFX-100 Timerfix extension");
             return averageTimer > 12;
         }
 
