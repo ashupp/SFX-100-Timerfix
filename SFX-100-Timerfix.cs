@@ -6,6 +6,7 @@ using System;
 using System.Diagnostics;
 using System.Threading;
 using System.Linq;
+using System.Reflection;
 
 namespace TimerFixExtension
 {
@@ -30,7 +31,7 @@ namespace TimerFixExtension
         {
             Name = "SFX-100 Timerfix";
             Info = "Fixes Windows 10 high performance timer issues";
-            Version = "1.0.0";
+            Version = Assembly.LoadFrom(Assembly.GetExecutingAssembly().Location).GetName().Version.ToString();
             Author = "ashupp / ashnet GmbH";
             HasControl = false;
         }
@@ -48,8 +49,7 @@ namespace TimerFixExtension
                 }
                 catch(Exception ex)
                 {
-                    Log(Name + ": error during setting timer: " + ex.Message);
-                    MessageBox.Show("Error during setting timer: " + ex.Message, this.Name);
+                    Log(Name + ": Error during setting timer: " + ex.Message);
                 }
             }
             else
