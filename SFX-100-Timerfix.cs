@@ -7,8 +7,9 @@ using System.Diagnostics;
 using System.Threading;
 using System.Linq;
 using System.Reflection;
+using System.Windows.Forms;
 
-namespace TimerFixExtension
+namespace SFX100Timerfix
 {
     public static class WinApi
     {
@@ -27,78 +28,40 @@ namespace TimerFixExtension
 
     public class TimerFixExtension : AbstractSimFeedbackExtension
     {
+
+        private TimerfixControl _extCtrl;
+
         public TimerFixExtension()
         {
             Name = "SFX-100 Timerfix";
             Info = "Fixes Windows 10 high performance timer issues";
             Version = Assembly.LoadFrom(Assembly.GetExecutingAssembly().Location).GetName().Version.ToString();
             Author = "ashupp / ashnet GmbH";
-            HasControl = false;
+            NeedsOwnTab = false;
+            HasControl = true;
+        }
+
+        public override void Init(SimFeedbackExtensionFacade facade, ExtensionConfig config)
+        {
+            base.Init(facade, config);
+            Log(Name + ":Initialize Extension");
+            _extCtrl = new TimerfixControl(this, facade);
         }
 
         public override void Start()
         {
             Log(Name + ": Extension loaded");
-            if (TimerUpgradeNecessary())
-            {
-                try
-                {
-                    Log(Name + ": slow timer detected - loading fix");
-                    WinApi.TimeBeginPeriod(1);
-                    Log(Name + ": fix loaded");
-
-                    if (TimerUpgradeNecessary())
-                    {
-                        Log(Name + ": timer still slow - fix could not lower timer interval");
-                    }
-                    else
-                    {
-                        Log(Name + ": fix is working - enjoy :) ");
-
-                    }
-                }
-                catch(Exception ex)
-                {
-                    Log(Name + ": Error during setting timer: " + ex.Message);
-                }
-            }
-            else
-            {
-                Log("SFX-100-Timerfix: not necessary");
-            }
+            _extCtrl.Start();
         }
 
-
-        private bool TimerUpgradeNecessary()
-        {
-            const int millisToWait = 10;
-            const int runCounts = 50;
-            long[] timeValues = new long[runCounts];
-            int i = 0;
-            Stopwatch sw = new Stopwatch();
-            sw.Start();
-
-            while (true)
-            {
-                if (i >= runCounts) break;
-                sw.Restart();
-                Thread.Sleep(millisToWait);
-                long t0 = sw.Elapsed.Milliseconds;
-
-                timeValues[i] = t0;
-                i++;
-            }
-
-            var averageTimer = timeValues.Average();
-            Log(Name + ": Average timer value: " + averageTimer.ToString());
-
-            return averageTimer > 12;
-        }
 
         public override void Stop()
         {
+            _extCtrl.Stop();
             Log(Name + ": Extension unloaded");
         }
-        
+
+        public override Control ExtensionControl => _extCtrl;
+
     }
 }

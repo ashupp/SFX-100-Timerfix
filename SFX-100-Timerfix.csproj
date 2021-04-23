@@ -31,6 +31,8 @@
     <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="SimFeedbackExtension">
       <HintPath>lib\SimFeedbackExtension.dll</HintPath>
     </Reference>
@@ -48,6 +50,17 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SFX-100-Timerfix.cs" />
+    <Compile Include="TimerfixControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TimerfixControl.Designer.cs">
+      <DependentUpon>TimerfixControl.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TimerfixControl.resx">
+      <DependentUpon>TimerfixControl.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
