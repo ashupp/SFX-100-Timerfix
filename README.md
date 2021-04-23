@@ -1,9 +1,7 @@
 # SFX-100-Timerfix
 Fixes Windows 10 high performance timer issues. Works as SimFeedback extenstion. 
 
-### Download and install this extension right now for best performance when you are using SimFeedback and SFX-100
-
-
+### Download and install this extension now for best performance using SimFeedback with SFX-100
 
 **Update 23.04.2021:**  
 **Function of the fix confirmed by measurement and many reports from users. "You can really feel it!"**  
