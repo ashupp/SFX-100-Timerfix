@@ -35,19 +35,17 @@ https://github.com/ashupp/SFX-100-Timerfix/releases
 
 ![image](https://user-images.githubusercontent.com/1867828/115565650-d6b88b00-a2b9-11eb-9a04-24d6a345d4df.png)
 
-## Proof that this fix works (Part from the report of Topy190675)
-![image](https://user-images.githubusercontent.com/1867828/115837385-cff45a00-a418-11eb-863d-ec8184b85565.png)
-
 ## How can i be sure and test if this fix works?
 
-
-**This is how it looks like when the extension detects that no timer fix is needed**
+### This is how it looks like when the extension detects that no timer fix is needed
 ![image](https://user-images.githubusercontent.com/1867828/115901164-21283c00-a461-11eb-8d7f-008d45f77398.png)
 
-**And this is how it looks like when the extension detects the timer fix is needed**
+### And this is how it looks like when the extension detects the timer fix is needed**
 ![image](https://user-images.githubusercontent.com/1867828/115901077-06ee5e00-a461-11eb-9e36-03606fa7c71a.png)
 
 
+## Proof that this fix works (Part from the report of Topy190675)
+![image](https://user-images.githubusercontent.com/1867828/115837385-cff45a00-a418-11eb-863d-ec8184b85565.png)
 
 This fix is based on the research and proof of concept by SimFeedBack community member Dsl71, Topy190675, Saxxon and many others.
 The issue in combination with SFX-100 was detected by Pimpi84 - thank you.
