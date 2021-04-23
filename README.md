@@ -47,7 +47,9 @@ https://github.com/ashupp/SFX-100-Timerfix/releases
 ![image](https://user-images.githubusercontent.com/1867828/115901077-06ee5e00-a461-11eb-9e36-03606fa7c71a.png)
 
 
-# Proof that this fix works (Part from the report of Topy190675)
+# Proof that this fix works
+Topy190675 tested the actual timing with an oscilloscope to proof this fix is optimizing the timer and removes stuttering.  
+This image is part of his full report. Download: [SFX-SFB_measurement_for_timer-fix.pdf](https://github.com/ashupp/SFX-100-Timerfix/files/6363569/SFX-SFB_measurement_for_timer-fix.pdf)
 ![image](https://user-images.githubusercontent.com/1867828/115837385-cff45a00-a418-11eb-863d-ec8184b85565.png)
 
 This fix is based on the research and proof of concept by SimFeedBack community member Dsl71, Topy190675, Saxxon and many others.
