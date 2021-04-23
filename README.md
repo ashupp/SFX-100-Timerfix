@@ -5,7 +5,7 @@ Fixes Windows 10 high performance timer issues. Works as SimFeedback extenstion.
 
 **Update 23.04.2021:**  
 **Function of the fix confirmed by measurement and many reports from users. "You can really feel it!"**  
-**See and download report by Topy190675: [SFX-SFB_measurement_for_timer-fix.pdf](https://github.com/ashupp/SFX-100-Timerfix/files/6363569/SFX-SFB_measurement_for_timer-fix.pdf)** 
+**See and download full report by Topy190675: [SFX-SFB_measurement_for_timer-fix.pdf](https://github.com/ashupp/SFX-100-Timerfix/files/6363569/SFX-SFB_measurement_for_timer-fix.pdf)** 
 
 # Description
 Many current Windows installations are suffering a slower high performance timer. This could be due to an energy-saving setting but currently there is many speculation and no one is really sure about why this is actually happening and how to solve it by configuration. 
@@ -66,5 +66,5 @@ https://github.com/ashupp/SFX-100-Timerfix/releases
 This fix is based on the research and proof of concept by SimFeedBack community member Dsl71, Topy190675, Saxxon and many others.
 The issue in combination with SFX-100 was detected by Pimpi84 - thank you.
 
-**Please support this great project. **
+**Please support this great project.**
 https://opensfx.com
