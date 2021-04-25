@@ -117,4 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblDescription.Text" xml:space="preserve">
+    <value>Standard values will be good for most users. 
+On startup the fix will automatically be applied if average is above 12ms.
+Check the box if you want the fix to be applied even if the average is below 12ms.
+Altough it could increase timer performance even more, the results may vary.
+The goal is to be as close as possible to an average of 10ms.</value>
+  </data>
 </root>

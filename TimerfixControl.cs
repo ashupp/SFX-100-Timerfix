@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading;
@@ -11,13 +11,17 @@ namespace SFX100Timerfix
     public partial class TimerfixControl : UserControl
     {
         TimerFixExtension tfExt;
+        TimerFixConfig tfCfg;
         SimFeedbackExtensionFacade sfbFacade;
 
-        public TimerfixControl(TimerFixExtension timerFixExtension, SimFeedback.extension.SimFeedbackExtensionFacade facade)
+        public TimerfixControl(TimerFixExtension timerFixExtension, SimFeedback.extension.SimFeedbackExtensionFacade facade, TimerFixConfig config)
         {
             tfExt = timerFixExtension;
             sfbFacade = facade;
+            tfCfg = config;
             InitializeComponent();
+            
+            checkBoxAutoApply.Checked = tfCfg.ForceApply;
         }
 
 
@@ -39,9 +43,9 @@ namespace SFX100Timerfix
             }
 
             var averageTimer = timeValues.Average();
-            Log(Name + ": Average timer value: " + averageTimer.ToString());
+            Log(Name + ": Average timer value of " + runCounts + " samples: " + averageTimer.ToString() + " ms");
 
-            return averageTimer > 12;
+            return averageTimer > Convert.ToDouble(tfCfg.Threshold);
         }
 
         internal void Log(string message)
@@ -71,13 +75,18 @@ namespace SFX100Timerfix
         }
 
 
-        internal void Start()
+        internal void Start(bool force = false)
         {
-            if (TimerUpgradeNecessary())
+
+
+            var necessary = TimerUpgradeNecessary();
+            if (TimerUpgradeNecessary() || force)
             {
                 try
                 {
-                    Log(Name + ": slow timer detected - loading fix");
+                    if(necessary) Log(Name + ": slow timer detected - loading fix");
+                    if(force) Log(Name + ": Forced loading of fix");
+
                     WinApi.TimeBeginPeriod(1);
                     Log(Name + ": fix loaded");
 
@@ -90,7 +99,6 @@ namespace SFX100Timerfix
                     {
                         DrawSuccess();
                         Log(Name + ": fix is working - enjoy :) ");
-
                     }
                 }
                 catch (Exception ex)
@@ -127,14 +135,17 @@ namespace SFX100Timerfix
             Process.Start(sInfo);
         }
 
-        private void lblDesc_Click(object sender, EventArgs e)
-        {
 
+        private void btnForceFix_Click(object sender, EventArgs e)
+        {
+            Start(true);
         }
 
-        private void logBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
+        private void checkBoxAutoApply_CheckedChanged(object sender, EventArgs e)
+        {
+            tfCfg.ForceApply = checkBoxAutoApply.Checked;
+            sfbFacade.SaveConfig();
         }
     }
 }

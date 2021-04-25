@@ -10,10 +10,10 @@
     <ROW Property="ARPNOREPAIR" MultiBuildValue="DefaultBuild:1"/>
     <ROW Property="ARPURLINFOABOUT" Value="https://github.com/ashupp/SFX-100-Timerfix"/>
     <ROW Property="Manufacturer" Value="ashnet GmbH"/>
-    <ROW Property="ProductCode" Value="1031:{773FE99E-57E7-4F0A-A3EE-19577E7DE0E1} 1033:{773FE99E-57E7-4F0A-A3EE-19577E7DE0E1} " Type="16"/>
+    <ROW Property="ProductCode" Value="1031:{E009970F-B9E3-4DB4-AADE-B94C9AB43FB3} 1033:{E009970F-B9E3-4DB4-AADE-B94C9AB43FB3} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1031"/>
     <ROW Property="ProductName" Value="SFX-100-Timerfix extension for SimFeedback"/>
-    <ROW Property="ProductVersion" Value="1.0.8.0" Type="32"/>
+    <ROW Property="ProductVersion" Value="1.0.14.0" Type="32"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
     <ROW Property="UpgradeCode" Value="{94DF68E3-CF35-48BA-A291-6F4FE53DEE64}"/>
     <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>

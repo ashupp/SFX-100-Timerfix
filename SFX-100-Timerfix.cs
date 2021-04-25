@@ -3,11 +3,8 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Security;
 using System;
-using System.Diagnostics;
-using System.Threading;
-using System.Linq;
 using System.Reflection;
-using System.Windows.Forms;
+using SimFeedback.conf;
 
 namespace SFX100Timerfix
 {
@@ -26,10 +23,20 @@ namespace SFX100Timerfix
         public static extern uint TimeEndPeriod(uint uMilliseconds);
     }
 
+    [Serializable]
+    public class TimerFixConfig : ICustomConfig
+    {
+        public bool ForceApply { get; set; }
+
+        public double Threshold { get; set; }
+    }
+
     public class TimerFixExtension : AbstractSimFeedbackExtension
     {
 
         private TimerfixControl _extCtrl;
+
+        private TimerFixConfig _config;
 
         public TimerFixExtension()
         {
@@ -45,13 +52,30 @@ namespace SFX100Timerfix
         {
             base.Init(facade, config);
             Log(Name + ":Initialize Extension");
-            _extCtrl = new TimerfixControl(this, facade);
+
+
+            _config = (TimerFixConfig)config.CustomConfig;
+            if (_config == null)
+            {
+                LogDebug("FanatecExtension: No Config found, creating new config");
+                _config = new TimerFixConfig()
+                {
+                    ForceApply = false,
+                    Threshold = 12
+                };
+                config.CustomConfig = _config;
+            }
+
+
+            _extCtrl = new TimerfixControl(this, facade, _config);
+
         }
 
         public override void Start()
         {
             Log(Name + ": Extension loaded");
-            _extCtrl.Start();
+
+            _extCtrl.Start(_config.ForceApply);
         }
 
 
