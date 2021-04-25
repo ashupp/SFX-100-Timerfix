@@ -3,7 +3,14 @@ Fixes Windows 10 high performance timer issues. Works as SimFeedback extenstion.
 
 ### Download and install this extension for best performance using SimFeedback with SFX-100
 
+**Update 25.04.2021:**  
+New Version 1.0.14.0  
+Added possibility to force fix on startup even if the average timer is below 12ms.  
+Altough it could increase timer performance even more, the results may vary.  
+The goal is to be as close as possible to an average of 10ms.  
+  
 **Update 23.04.2021 #2:**  
+New Version 1.0.8.0  
 Added GUI for the extension so you no longer have to examine log files to check if it works  
 
 **Update 23.04.2021 #1:**  
